@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import *
 
 
-class FilmAdmin(admin.ModelAdmin):
+class MovieAdmin(admin.ModelAdmin):
     list_display = (
         "id",
         "title",
@@ -13,6 +13,7 @@ class FilmAdmin(admin.ModelAdmin):
         "poster",
         "rate",
         "video",
+        "typ"
     )
     list_display_links = ("id", "title")
     search_fields = ("title", "content")
@@ -21,7 +22,7 @@ class FilmAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("title",)}
 
 
-admin.site.register(Film, FilmAdmin)
+admin.site.register(Movie, MovieAdmin)
 
 
 class GenreAdmin(admin.ModelAdmin):
@@ -39,6 +40,8 @@ class MenuAdmin(admin.ModelAdmin):
 
 admin.site.register(MenuItem, MenuAdmin)
 
-class FilmTypeAdmin(admin.ModelAdmin):
+class TypeAdmin(admin.ModelAdmin):
     list_display = ("id", "name")
     prepopulated_fields = {"slug": ("name",)}
+
+admin.site.register(MovieType, TypeAdmin)

@@ -1,143 +1,121 @@
+{% load static %}
 <!DOCTYPE HTML>
 
 <html>
+  <head>
+    <title>{{ page_title }}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="{% static 'films/assets/css/main.css' %}" />
+  </head>
 
-<head>
-	<title>Editorial by HTML5 UP</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-</head>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Main -->
+      <div id="main">
+        <div class="inner">
+          <!-- Header -->
+          <header id="header">
+            <a href="#" class="logo"><strong>Кино - это зеркало, в котором мы часто видим себя...</strong></a>
+            <ul class="icons">
+              <li>
+                <a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a>
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a>
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a>
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a>
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a>
+              </li>
+            </ul>
+          </header>
+		  {% block posts %}
+		  {% endblock %}
+        </div>
+      </div>
 
-<body class="is-preload">
-
-	<!-- Wrapper -->
-	<div id="wrapper">
-
-		<!-- Main -->
-		<div id="main">
-			<div class="inner">
-
-				<!-- Header -->
-				<header id="header">
-					<a href="index.html" class="logo"><strong>Editorial</strong> by HTML5 UP</a>
-					<ul class="icons">
-						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a>
-						</li>
-						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
-					</ul>
-				</header>
-
-				
-
-			</div>
-		</div>
-
-		<!-- Sidebar -->
-		<div id="sidebar">
-			<div class="inner">
-
-				<!-- Search -->
-				<!-- <section id="search" class="alt">
+      <!-- Sidebar -->
+      <div id="sidebar">
+        <div class="inner">
+          <!-- Search -->
+          <!--       <section id="search" class="alt">
 					<form method="post" action="#">
 						<input type="text" name="query" id="query" placeholder="Search" />
 					</form>
-				</section> -->
+				</section>       -->
 
-				<!-- Menu -->
-				<nav id="menu">
-					<header class="major">
-						<h2>Menu</h2>
-					</header>
-					<ul>
-						<li>
-							<span class="opener">Submenu</span>
-							<ul>
-								<li><a href="#">Lorem Dolor</a></li>
-								<li><a href="#">Ipsum Adipiscing</a></li>
-								<li><a href="#">Tempus Magna</a></li>
-								<li><a href="#">Feugiat Veroeros</a></li>
-							</ul>
-						</li>
-						<li>
-							<span class="opener">Submenu</span>
-							<ul>
-								<li><a href="#">Lorem Dolor</a></li>
-								<li><a href="#">Ipsum Adipiscing</a></li>
-								<li><a href="#">Tempus Magna</a></li>
-								<li><a href="#">Feugiat Veroeros</a></li>
-							</ul>
-						</li>
-						<li>
-							<span class="opener">Submenu</span>
-							<ul>
-								<li><a href="#">Lorem Dolor</a></li>
-								<li><a href="#">Ipsum Adipiscing</a></li>
-								<li><a href="#">Tempus Magna</a></li>
-								<li><a href="#">Feugiat Veroeros</a></li>
-							</ul>
-						</li>
+          <!-- Menu -->
+          <nav id="menu">
+            <header class="major">
+              <h2>Меню</h2>
+            </header>
+            <ul>
+              <li>
+                <span class="opener">Фильмы</span>
+                <ul>
+                  {% for item in menu_genres %}
+                    <li>
+                      <a href="#">{{ item }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </li>
+              <li>
+                <span class="opener">Сериалы</span>
+                <ul>
+                  {% for item in menu_genres %}
+                    <li>
+                      <a href="#">{{ item }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </li>
+              <li>
+                <span><a href="#">Мультфильмы</a></span>
+              </li>
+              {% for item in menu %}
+                <li>
+                  <a href='#'><span>{{ item }}</span></a>
+                </li>
+              {% endfor %}
+            </ul>
+          </nav>
 
-						<li>
-							<span class="opener">Submenu</span>
-							<ul>
-								<li><a href="#">Lorem Dolor</a></li>
-								<li><a href="#">Ipsum Adipiscing</a></li>
-								<li><a href="#">Tempus Magna</a></li>
-								<li><a href="#">Feugiat Veroeros</a></li>
-							</ul>
-						</li>
+          <!-- Section -->
+          <section>
+            <header class="major">
+              <h2>Тут тоже</h2>
+            </header>
+            <p>Какаято дичьКакаято дичьКакаято дичьКакаято дичьКакаято дичьКакаято дичьКакаято дичьКакаято дичьКакаято дичьКакаято дичь</p>
+            <ul class="contact">
+              <li class="icon solid fa-envelope">
+                <a href="#">swankyyy1@gmail.com</a>
+              </li>
+              <li class="icon solid fa-phone">+375 29 281-32-37</li>
+              <li class="icon solid fa-home">Minsk, Lenina, 1</li>
+            </ul>
+          </section>
 
-						<li>
-							<span class="opener">Another Submenu</span>
-							<ul>
-								<li><a href="#">Lorem Dolor</a></li>
-								<li><a href="#">Ipsum Adipiscing</a></li>
-								<li><a href="#">Tempus Magna</a></li>
-								<li><a href="#">Feugiat Veroeros</a></li>
-							</ul>
-						</li>
+          <!-- Footer -->
+          <footer id="footer">
+            <p class="copyright">&copy; created by swankyyy</p>
+          </footer>
+        </div>
+      </div>
+    </div>
 
-					</ul>
-				</nav>
-
-				<!-- Section -->
-				<section>
-					<header class="major">
-						<h2>Get in touch</h2>
-					</header>
-					<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem
-						ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat
-						tempus aliquam.</p>
-					<ul class="contact">
-						<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-						<li class="icon solid fa-phone">(000) 000-0000</li>
-						<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
-							Nashville, TN 00000-0000</li>
-					</ul>
-				</section>
-
-				<!-- Footer -->
-				<footer id="footer">
-					<p class="copyright">&copy; created by swankyyy
-					</p>
-				</footer>
-
-			</div>
-		</div>
-
-	</div>
-
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-
-</body>
-
+    <!-- Scripts -->
+    <script src="{% static 'films/assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'films/assets/js/browser.min.js' %}"></script>
+    <script src="{% static 'films/assets/js/breakpoints.min.js' %}"></script>
+    <script src="{% static 'films/assets/js/util.js' %}"></script>
+    <script src="{% static 'films/assets/js/main.js' %}"></script>
+  </body>
 </html>

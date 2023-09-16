@@ -1,0 +1,31 @@
+{% extends 'films/base.html' %}
+{% load static %}
+{% block posts %}
+  <link rel="stylesheet" href="{% static 'films/assets/css/custom.css' %}" />
+  {% for item in film_list %}
+  <div>
+    <div class="post_container">
+      <div class="text_container">
+        <div class="content">
+          <header>
+            <h1>
+              {{item.title}}
+            </h1>
+            <p>{{item.actors|truncatewords:5}}</p>
+          </header>
+          <p>{{item.content|truncatewords:40}}</p>
+          <ul class="actions">
+            <li>
+              <a href="#" class="button big">Читать дальше...</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="img_container">
+        <img class="temp_img" src="{{item.poster.url}}"/>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+{% endblock %}

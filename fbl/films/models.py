@@ -2,7 +2,7 @@ from django.db import models
 from django.urls import reverse
 
 # Create your models here.
-class Film(models.Model):
+class Movie(models.Model):
     title = models.CharField(max_length=50, verbose_name="Название фильма")
     content = models.TextField(blank=True, verbose_name="Описание")
     slug = models.SlugField(
@@ -12,13 +12,16 @@ class Film(models.Model):
     is_publish = models.BooleanField(default=True)
     actors = models.TextField(blank=True, verbose_name="В главных ролях")
     create_date = models.DateField(verbose_name="Дата выхода")
-    poster = models.ImageField(upload_to="uploads/%Y/%m/%d/", verbose_name="Постер")
+    poster = models.ImageField(upload_to="posters/", verbose_name="Постер")
     rate = models.TextField(max_length=1, verbose_name="Рейтинг Кинопоиска")
     video = models.URLField(verbose_name="Ссылка на трейлер")
+    opinion = models.TextField(blank=True, verbose_name="Отзыв")
+    genre = models.ManyToManyField("Genre", verbose_name="Жанры", blank=True)
+    typ = models.ForeignKey("MovieType", verbose_name="Тип", on_delete=models.PROTECT, null=True)
 
     def get_absolute_url(self):
         
-        return reverse("film", kwargs={"film_slug": self.slug})
+        return reverse("film", kwargs={"movie_slug": self.slug})
 
     class Meta:
         verbose_name = "Список фильмов"
@@ -56,7 +59,7 @@ class MenuItem(models.Model):
         verbose_name = "Пункты меню"
         
         
-class FilmType(models.Model):
+class MovieType(models.Model):
     name = models.CharField(max_length=30, db_index=True, verbose_name="Тип")
     slug = models.SlugField(max_length=30, unique=True, db_index=True, verbose_name="URL")
     
@@ -64,7 +67,7 @@ class FilmType(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse("film_type", kwargs={"slug": self.slug})
+        return reverse("film_type", kwargs={"type_slug": self.slug})
 
     class Meta:
         verbose_name = "Тип"
