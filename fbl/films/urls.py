@@ -1,10 +1,10 @@
-# from django.urls import path
+from django.urls import path
 
-# from .views import *
+from .views import *
 
-# urlpatterns = [
-#     path(
-#         "", BlogHome.as_view(), name="home"
-#     ),  # нужно вызывать функцию чтобы класс заработал
+urlpatterns = [
+    path(
+        "", MainPage.as_view(), name="home"
+    ),  # нужно вызывать функцию чтобы класс заработал
     
-# ]
+]

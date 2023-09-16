@@ -40,4 +40,31 @@ class Genre(models.Model):
         return reverse("genre", kwargs={"gen_slug": self.slug})
 
     class Meta:
-        verbose_name = "Категории"
+        verbose_name = "Жанры"
+        
+class MenuItem(models.Model):
+    name = models.CharField(max_length=30, db_index=True, verbose_name="Пункт меню")
+    slug = models.SlugField(max_length=30, unique=True, db_index=True, verbose_name="URL")
+    
+    def __str__(self) -> str:
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse("menu", kwargs={"item_slug": self.slug})
+
+    class Meta:
+        verbose_name = "Пункты меню"
+        
+        
+class FilmType(models.Model):
+    name = models.CharField(max_length=30, db_index=True, verbose_name="Тип")
+    slug = models.SlugField(max_length=30, unique=True, db_index=True, verbose_name="URL")
+    
+    def __str__(self) -> str:
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse("film_type", kwargs={"slug": self.slug})
+
+    class Meta:
+        verbose_name = "Тип"
