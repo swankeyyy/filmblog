@@ -62,7 +62,7 @@
                 <ul>
                   {% for item in menu_genres %}
                     <li>
-                      <a href="#">{{ item }}</a>
+                      <a href="{{ item.get_film_url }}">{{ item }}</a>
                     </li>
                   {% endfor %}
                 </ul>
@@ -72,7 +72,7 @@
                 <ul>
                   {% for item in menu_genres %}
                     <li>
-                      <a href="#">{{ item }}</a>
+                      <a href="{{ item.get_serial_url }}">{{ item }}</a>
                     </li>
                   {% endfor %}
                 </ul>

@@ -39,8 +39,11 @@ class Genre(models.Model):
     def __str__(self) -> str:
         return self.name
 
-    def get_absolute_url(self):
-        return reverse("genre", kwargs={"gen_slug": self.slug})
+    def get_film_url(self):
+        return reverse("f_genre", kwargs={"gen_slug": self.slug})
+    
+    def get_serial_url(self):
+        return reverse("s_genre", kwargs={"gen_slug": self.slug})
 
     class Meta:
         verbose_name = "Жанры"

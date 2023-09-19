@@ -32,3 +32,43 @@ class MainPage(DataMixin, ListView):
 
     def get_queryset(self):
         return Movie.objects.all()[::-1]
+
+
+class FilmGenreView(DataMixin, ListView):
+    model = Movie
+    template_name = "films/genres.html"
+    context_object_name = "genres_list"
+    allow_empty = False
+
+    def get_context_data(
+        self, **kwargs
+    ):  # задает дополнительные параметры которые передаются в шаблон
+        context = super().get_context_data(**kwargs)
+        mix_context = self.get_user_context(page_title="Фильмы по жанрам")
+        context = dict(list(context.items()) + list(mix_context.items()))
+        return context
+
+    def get_queryset(self):
+        return Movie.objects.filter(
+            genre__slug=self.kwargs["gen_slug"], is_publish=True, typ__slug="film"
+        )[::-1]
+
+
+class SerialGenreView(DataMixin, ListView):
+    model = Genre
+    template_name = "films/genres.html"
+    context_object_name = "genres_list"
+
+    def get_context_data(
+        self, **kwargs
+    ):  # задает дополнительные параметры которые передаются в шаблон
+        context = super().get_context_data(**kwargs)
+        mix_context = self.get_user_context(page_title="Сериалы по жанрам")
+        context = dict(list(context.items()) + list(mix_context.items()))
+        return context
+
+    def get_queryset(self):
+        return Movie.objects.filter(
+            genre__slug=self.kwargs["gen_slug"], is_publish=True, typ__slug="film"
+        )[::-1]
+
