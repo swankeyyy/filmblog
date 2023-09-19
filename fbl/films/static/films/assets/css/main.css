@@ -143,7 +143,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 4em;
-  margin: 0 0 0.5em 0;
+  margin: 0 0 20px 0;
   line-height: 1.3; }
 
 h2 {
@@ -1865,9 +1865,9 @@ button,
         border-top: 0 !important; }
   @media screen and (max-width: 1680px) {
     #main > .inner {
-      padding: 0 5em 0.1em 5em ; }
+      padding: 0 2em 0.1em 2em ; }
       #main > .inner > section {
-        padding: 5em 0 3em 0 ; } }
+        padding: 2em 0 2em 0 ; } }
   @media screen and (max-width: 1280px) {
     #main > .inner {
       padding: 0 4em 0.1em 4em ; }

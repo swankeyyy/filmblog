@@ -93,3 +93,17 @@ class MultiGenreView(DataMixin, ListView):
             is_publish=True,
             typ__slug="multfilm",
         )[::-1]
+
+
+class ShowPost(DataMixin, DetailView):
+    model = Movie
+    template_name = "films/post.html"
+    context_object_name = "post"
+    slug_url_kwarg = "movie_slug"
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        mix_context = self.get_user_context(page_title="aaaaa")
+        context = dict(list(context.items()) + list(mix_context.items()))
+        return context
+

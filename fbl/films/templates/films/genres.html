@@ -14,7 +14,7 @@
             <p>{{ item.content|truncatewords:40 }}</p>
             <ul class="actions">
               <li>
-                <a href="#" class="button big">Читать дальше...</a>
+                <a href="{{item.get_absolute_url}}" class="button big">Читать дальше...</a>
               </li>
             </ul>
           </div>
