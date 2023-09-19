@@ -100,10 +100,15 @@ class ShowPost(DataMixin, DetailView):
     template_name = "films/post.html"
     context_object_name = "post"
     slug_url_kwarg = "movie_slug"
-    
-    def get_context_data(self, **kwargs):
+
+    def get_context_data(
+        self, **kwargs
+    ):  # задает дополнительные параметры которые передаются в шаблон
         context = super().get_context_data(**kwargs)
-        mix_context = self.get_user_context(page_title="aaaaa")
+        
+        mix_context = self.get_user_context(page_title=context["post"].title)
         context = dict(list(context.items()) + list(mix_context.items()))
         return context
+        
 
+    
