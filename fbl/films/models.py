@@ -44,6 +44,9 @@ class Genre(models.Model):
     
     def get_serial_url(self):
         return reverse("s_genre", kwargs={"gen_slug": self.slug})
+    
+    def get_multi_url(self):
+        return reverse("mult_genre", kwargs={"all": "all"})
 
     class Meta:
         verbose_name = "Жанры"

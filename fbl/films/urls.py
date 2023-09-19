@@ -12,8 +12,9 @@ urlpatterns = [
     path(
         "", MainPage.as_view(), name="home"
     ),  
-    path("films/genres/<slug:gen_slug>", FilmGenreView.as_view(), name="f_genre"),
-    path("serials/genres/<slug:gen_slug>", SerialGenreView.as_view(), name="s_genre")
+    path("films/<slug:gen_slug>", FilmGenreView.as_view(), name="f_genre"),
+    path("serials/<slug:gen_slug>", SerialGenreView.as_view(), name="s_genre"),
+    path("multfilmi/all", MultiGenreView.as_view(), name="mult_genre")
     
 ]
 
