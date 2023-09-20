@@ -1,28 +1,26 @@
 .post_container {
   display: flex;
-  margin: 40px 0 20px 0;
-  padding: 5px;
+  margin: 20px 0 10px 0;
+  padding: 1em;
   max-height: 500px;
+  flex-direction: row;
 }
 
 .text_container {
-  /* max-width: 900px;
-  max-height: 400px; */
-  padding: 5px;
-  flex-basis: 900px;
+  flex: 1 1 60%;
+  padding: 0.5em;
 }
 
-.temp_img {
-  padding: 5px;
-  height: 80%; 
-  max-height: 400px;
-  flex-basis: auto;
+.img-container {
+  flex: 1 1 40%;
+  padding: 0.5em;
 }
 
-.for_post {
-  margin-bottom: 10px;
+.custom_auth {
+  text-decoration-color: black;
+  color: black;
 }
 
-#post_title {
-  margin: 500px auto;
+.post_container {
+  padding: 1em;
 }

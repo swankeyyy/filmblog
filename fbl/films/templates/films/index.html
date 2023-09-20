@@ -13,7 +13,7 @@
             <p>
               <strong>{{ item.actors|truncatewords:5 }}</strong>
             </p>
-            <p>{{ item.content|truncatewords:40 }}</p>
+            <p>{{ item.content|truncatewords:50 }}</p>
             <ul class="actions">
               <li>
                 <a href="{{ item.get_absolute_url }}" class="button big">Читать дальше...</a>
@@ -23,9 +23,10 @@
         </div>
 
         <div class="img_container">
-          <img class="temp_img" src="{{ item.poster.url }}" />
+          <img  src="{{ item.poster.url }}" height="280px"/>
         </div>
       </div>
     </div>
+    <hr class="major" />
   {% endfor %}
 {% endblock %}

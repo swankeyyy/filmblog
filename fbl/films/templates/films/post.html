@@ -6,23 +6,25 @@
   <section>
     <h2>{{ post.title }}</h2>
     <div class="post_container">
-      <div>
+      <div class="text-container">
+        <strong>В главных ролях:</strong> {{ post.actors }}
+        <br />
+        
+        <strong>Рейтинг кинопоиска:</strong> {{ post.rate }}
+        <br />
+        <strong>Жанр:</strong> {% for genre in genres %}
+          {{ genre }}
+        {% endfor %}
+        <br />
+        <br />
         <p>
-          <strong>В главных ролях:</strong> {{ post.actors }}
-        </p>
-        <p>
-          <strong>Рейтинг кинопоиска:</strong> {{ post.rate }}
-        </p>
-        <p>
-          <strong>Жанр:</strong> {% for genre in genres %} {{genre}} {% endfor %}
-        </p>
-        <div>
           <strong>Описание:</strong>
-        </div>
-        <div>{{ post.content }}</div>
+
+          {{ post.content }}
+        </p>
       </div>
-      <div>
-        <img src="{{ post.poster.url }}" />
+      <div class="img-container">
+        <img src="{{ post.poster.url }}" height="300px"/>
       </div>
     </div>
     <hr class="major" />

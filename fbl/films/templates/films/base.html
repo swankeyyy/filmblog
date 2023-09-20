@@ -7,6 +7,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="{% static 'films/assets/css/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'films/assets/css/custom.css' %}" />
   </head>
 
   <body class="is-preload">
@@ -18,7 +19,9 @@
           <!-- Header -->
           <header id="header">
             <a href="{% url 'home' %}" class="logo"><strong>Главная</strong></a>
+            
             <ul class="icons">
+              
               <li>
                 <a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a>
               </li>
@@ -59,6 +62,12 @@
             </header>
             <ul>
               <li>
+                <a href="{% url 'about' %}"><span class="custom_auth">Авторизация</span></a>
+              </li>
+              <li>
+                <a href="{% url 'contacts' %}" class="custom_auth">Регистрация</a>
+              </li>
+              <li>
                 <span class="opener">Фильмы</span>
                 <ul>
                   {% for item in menu_genres %}
@@ -88,6 +97,11 @@
               <li>
                 <a href="{% url 'contacts' %}"><span>Контакты</span></a>
               </li>
+              <li>
+                <br>
+                <br>
+              </li>
+              
             </ul>
           </nav>
 
