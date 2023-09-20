@@ -105,10 +105,9 @@ class ShowPost(DataMixin, DetailView):
         self, **kwargs
     ):  # задает дополнительные параметры которые передаются в шаблон
         context = super().get_context_data(**kwargs)
-        
+
         mix_context = self.get_user_context(page_title=context["post"].title)
         context = dict(list(context.items()) + list(mix_context.items()))
         return context
-        
 
     

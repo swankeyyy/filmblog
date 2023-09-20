@@ -8,13 +8,15 @@
         <div class="text_container">
           <div class="content">
             <header>
-              <h1>{{ item.title }}</h1>
-              <p>{{ item.actors|truncatewords:5 }}</p>
+              <h2>{{ item.title }}</h2>
             </header>
+            <p>
+              <strong>{{ item.actors|truncatewords:5 }}</strong>
+            </p>
             <p>{{ item.content|truncatewords:40 }}</p>
             <ul class="actions">
               <li>
-                <a href="#" class="button big">Читать дальше...</a>
+                <a href="{{ item.get_absolute_url }}" class="button big">Читать дальше...</a>
               </li>
             </ul>
           </div>

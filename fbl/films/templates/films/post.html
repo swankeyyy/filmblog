@@ -14,7 +14,7 @@
           <strong>Рейтинг кинопоиска:</strong> {{ post.rate }}
         </p>
         <p>
-          <strong>Жанр:</strong> ХЗ как
+          <strong>Жанр:</strong> {{post.genre}}
         </p>
         <div>
           <strong>Описание:</strong>
@@ -28,7 +28,7 @@
     <hr class="major" />
     <h2>Трейлер</h2>
     <div>
-      <iframe width="560" height="315" src="{{ post.video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <iframe width="700" height="350" src="{{ post.video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
     <hr class="major" />
     <h2>Моя рецензия</h2>
