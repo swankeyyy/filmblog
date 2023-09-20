@@ -14,6 +14,8 @@ urlpatterns = [
     path("serials/<slug:gen_slug>", SerialGenreView.as_view(), name="s_genre"),
     path("multfilmi/all", MultiGenreView.as_view(), name="mult_genre"),
     path("detail/<slug:movie_slug>", ShowPost.as_view(), name="showpost"),
+    path('about', About.as_view(), name="about"),
+    path('contacts', Contacts.as_view(), name="contacts")
 ]
 
 

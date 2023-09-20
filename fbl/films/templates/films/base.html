@@ -36,8 +36,9 @@
               </li>
             </ul>
           </header>
-		  {% block posts %}
-		  {% endblock %}
+          {% block posts %}
+
+          {% endblock %}
         </div>
       </div>
 
@@ -45,11 +46,11 @@
       <div id="sidebar">
         <div class="inner">
           <!-- Search -->
-          <!--       <section id="search" class="alt">
+          <!--        <section id="search" class="alt">
 					<form method="post" action="#">
 						<input type="text" name="query" id="query" placeholder="Search" />
 					</form>
-				</section>       -->
+				</section>        -->
 
           <!-- Menu -->
           <nav id="menu">
@@ -77,23 +78,25 @@
                   {% endfor %}
                 </ul>
               </li>
+
               <li>
-                <span><a href="{% url "mult_genre" %}">Мультфильмы</a></span>
+                <span><a href="{% url 'mult_genre' %}">Мультфильмы</a></span>
               </li>
-              {% for item in menu %}
-                <li>
-                  <a href='#'><span>{{ item }}</span></a>
-                </li>
-              {% endfor %}
+              <li>
+                <a href="{% url 'about' %}"><span>О блоге</span></a>
+              </li>
+              <li>
+                <a href="{% url 'contacts' %}"><span>Контакты</span></a>
+              </li>
             </ul>
           </nav>
 
           <!-- Section -->
           <section>
             <header class="major">
-              <h2>Тут тоже</h2>
+              <h2>Реклама</h2>
             </header>
-            <p>Какаято дичьКакаято дичьКакаято дичьКакаято дичьКакаято дичьКакаято дичьКакаято дичьКакаято дичьКакаято дичьКакаято дичь</p>
+            <p>Здесь могла быть ваша реклама Здесь могла быть ваша реклама Здесь могла быть ваша реклама Здесь могла быть ваша реклама</p>
             <ul class="contact">
               <li class="icon solid fa-envelope">
                 <a href="#">swankyyy1@gmail.com</a>

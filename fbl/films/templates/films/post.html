@@ -14,7 +14,7 @@
           <strong>Рейтинг кинопоиска:</strong> {{ post.rate }}
         </p>
         <p>
-          <strong>Жанр:</strong> {{post.genre}}
+          <strong>Жанр:</strong> {% for genre in genres %} {{genre}} {% endfor %}
         </p>
         <div>
           <strong>Описание:</strong>

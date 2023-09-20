@@ -106,8 +106,32 @@ class ShowPost(DataMixin, DetailView):
     ):  # задает дополнительные параметры которые передаются в шаблон
         context = super().get_context_data(**kwargs)
 
-        mix_context = self.get_user_context(page_title=context["post"].title)
+        mix_context = self.get_user_context(
+            page_title=context["post"].title, genres=context["post"].genre.all()
+        )
         context = dict(list(context.items()) + list(mix_context.items()))
         return context
 
-    
+
+class About(DataMixin, TemplateView):
+    template_name = "films/about.html"
+
+    def get_context_data(
+        self, **kwargs
+    ):  # задает дополнительные параметры которые передаются в шаблон
+        context = super().get_context_data(**kwargs)
+        mix_context = self.get_user_context(page_title="О блоге")
+        context = dict(list(context.items()) + list(mix_context.items()))
+        return context
+
+
+class Contacts(DataMixin, TemplateView):
+    template_name = "films/contacts.html"
+
+    def get_context_data(
+        self, **kwargs
+    ):  # задает дополнительные параметры которые передаются в шаблон
+        context = super().get_context_data(**kwargs)
+        mix_context = self.get_user_context(page_title="Контакты")
+        context = dict(list(context.items()) + list(mix_context.items()))
+        return context
